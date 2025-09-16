@@ -1,0 +1,425 @@
+---
+comprehensive_financial_data_extraction_and_analysis:
+  description: |-
+    Extract and analyze comprehensive financial data from the provided balance sheet, P&L statement, and shareholding pattern documents for {company_name}. Perform detailed analysis including:
+
+    1. **Revenue & Profitability Analysis**: Extract revenue, sales, gross profit, operating profit, and net profit trends over past years and quarters. Calculate YoY and QoQ growth rates.
+
+    2. **Tax Impact Assessment**: Analyze tax expenses, effective tax rates, and impact on net profitability over time.
+
+    3. **Key Financial Ratios**: Calculate and track EPS, PE ratio, ROE, ROCE, debt-to-equity ratio, profit margins (gross, operating, net), current ratio, and quick ratio.
+
+    4. **Balance Sheet Analysis**: Extract and analyze total assets, current assets, non-current assets, total liabilities, current liabilities, long-term debt, and equity. Track changes over time.
+
+    5. **Cash Flow Analysis**: Extract cash flow from operations, investing, and financing activities. Assess sustainability and trends.
+
+    6. **Shareholding Pattern Analysis**: Extract promoter holding percentage, FII holdings, DII holdings, retail investor percentage, and track changes in promoter holdings over quarters.
+
+    7. **Operational Efficiency**: Analyze major cost components, expense ratios, and operational efficiency metrics.
+
+    8. **Comparative Analysis**: Perform detailed YoY and QoQ comparisons for all key metrics to identify growth/decline patterns.
+
+    Read all provided financial documents thoroughly and extract every relevant data point.
+  expected_output: "A comprehensive financial data analysis report containing:\n-
+    Complete revenue and profitability trends with growth rates\n- Tax impact analysis
+    and effective tax rate trends  \n- All key financial ratios with historical comparisons\n-
+    Detailed balance sheet analysis with asset-liability breakdowns\n- Cash flow analysis
+    and sustainability assessment\n- Complete shareholding pattern breakdown with
+    quarterly changes\n- Operational cost analysis and efficiency metrics\n- YoY and
+    QoQ comparative analysis for all metrics\n- All extracted raw financial data organized
+    in structured format\n\nFormat as detailed markdown report with tables for numerical
+    data and clear section headings."
+  agent: comprehensive_financial_data_analyst
+comprehensive_financial_health_change_analysis:
+  description: "Conduct a comprehensive financial health assessment of {company_name}
+    identifying both positive and negative indicators. Analyze all financial changes
+    and their root causes:\n\n**GREEN FLAGS ANALYSIS:**\n- Identify improving metrics
+    (revenue growth, margin expansion, efficiency gains)\n- Spot emerging competitive
+    advantages and operational improvements\n- Highlight positive trends in cash generation,
+    debt reduction, market positioning\n\n**RED FLAGS ANALYSIS:**  \n- Detect deteriorating
+    metrics and potential risks\n- Identify financial stress indicators and sustainability
+    concerns\n- Spot operational inefficiencies and declining performance areas\n\n**CHANGE
+    ANALYSIS & ROOT CAUSE INVESTIGATION:**\n- If revenue is stable but profit declining:
+    investigate tax increases, cost inflation, operational inefficiencies\n- If revenue
+    increasing but margins declining: analyze pricing power, cost structure changes\n-
+    If cash flow declining despite profit growth: examine working capital, capex,
+    or accounting practices\n- Tax impact analysis: effective tax rate changes and
+    reasons\n- Cost structure analysis: identify which costs are rising/falling and
+    why\n- Operational efficiency trends: productivity metrics and resource utilization\n\n**TREND
+    IMPLICATIONS:**\n- Assess sustainability of current trends\n- Predict likely future
+    performance based on identified changes\n- Recommend areas requiring management
+    attention"
+  expected_output: "A comprehensive financial health report for {company_name} containing:\n\n**EXECUTIVE
+    SUMMARY**: Overall financial health score and key insights\n\n**GREEN FLAGS SECTION**:
+    \n- Positive indicators and improving metrics\n- Emerging competitive advantages
+    \n- Operational improvements and efficiency gains\n\n**RED FLAGS SECTION**:\n-
+    Risk indicators and deteriorating metrics\n- Potential financial stress signals\n-
+    Areas of concern requiring attention\n\n**CHANGE ANALYSIS**:\n- Detailed breakdown
+    of all significant financial changes\n- Root cause analysis for each major change
+    (revenue vs profit discrepancies, margin changes, etc.)\n- Tax impact assessment
+    and effective tax rate analysis\n- Cost structure evolution and operational efficiency
+    trends\n\n**PREDICTIVE INSIGHTS**:\n- Sustainability assessment of current trends
+    \ \n- Early warning indicators for future performance\n- Recommended monitoring
+    metrics and action items"
+  agent: comprehensive_financial_health_change_analyst
+  context:
+  - comprehensive_financial_data_extraction_and_analysis
+phase_1_udit_s_data_extraction_delegation_review:
+  description: |-
+    **ORCHESTRATOR PHASE 1: DATA EXTRACTION DELEGATION & QUALITY CONTROL**
+
+    Initiate the financial analysis workflow for {company_name} by delegating the data extraction task to the Financial Data Analyst and conducting thorough quality review.
+
+    **DELEGATION RESPONSIBILITIES:**
+    - Clearly communicate data extraction requirements to the Financial Data Analyst
+    - Specify the exact financial documents and metrics needed for comprehensive analysis
+    - Set quality standards and expectations for data accuracy and completeness
+
+    **QUALITY REVIEW PROCESS:**
+    - Review the extracted financial data for accuracy, completeness, and consistency
+    - Verify that all critical financial statements (income, balance sheet, cash flow) are captured
+    - Check for any missing data points, inconsistencies, or red flags
+    - Assess data quality and reliability for subsequent analysis phases
+
+    **FEEDBACK & ITERATION:**
+    - If data extraction is incomplete or contains errors, delegate revision work back to the Financial Data Analyst
+    - Provide specific feedback on what needs improvement or additional extraction
+    - Ensure data meets professional standards before proceeding to analysis phase
+
+    **DECISION CHECKPOINT:**
+    - Make the strategic decision on whether the extracted data is sufficient for high-quality analysis
+    - Only proceed to next phase when completely satisfied with data quality and completeness
+    - Document any data limitations or assumptions that will impact subsequent analysis
+  expected_output: |-
+    **PHASE 1 ORCHESTRATION REPORT:**
+
+    **DATA EXTRACTION DELEGATION SUMMARY:**
+    - Clear documentation of requirements communicated to Financial Data Analyst
+    - Specification of financial documents and metrics requested
+    - Quality standards and expectations set for the extraction process
+
+    **QUALITY REVIEW ASSESSMENT:**
+    - Comprehensive evaluation of extracted financial data quality
+    - Verification of completeness across all critical financial statements
+    - Identification of any data gaps, inconsistencies, or concerns
+    - Assessment of data reliability for subsequent analysis phases
+
+    **FEEDBACK & ITERATION LOG:**
+    - Documentation of any revision requests made to the Financial Data Analyst
+    - Record of specific improvements or additional extractions requested
+    - Confirmation that all feedback has been addressed satisfactorily
+
+    **PHASE 1 COMPLETION CERTIFICATION:**
+    - Strategic decision to proceed based on data quality assessment
+    - Confirmation that extracted data meets professional analysis standards
+    - Documentation of any data limitations or assumptions for next phase
+    - Formal approval to advance to Financial Health Analysis phase
+
+    **EXTRACTED DATA QUALITY SUMMARY:**
+    - Final assessment of data completeness and accuracy
+    - Ready-to-analyze dataset confirmation for handoff to next specialist
+  agent: udit
+  context:
+  - comprehensive_financial_data_extraction_and_analysis
+competitive_market_analysis_investment_valuation:
+  description: |-
+    Conduct comprehensive market and competitive analysis for {company_name} to determine strategic positioning and market valuation. Perform the following analysis:
+
+    **COMPETITIVE BENCHMARKING:**
+    - Identify and analyze top 3-5 direct competitors in the same sector
+    - Compare key financial ratios (P/E, ROE, ROCE, debt-to-equity) with industry peers
+    - Assess competitive positioning and market share dynamics
+
+    **SECTOR TREND ANALYSIS:**
+    - Research current sector performance and growth trends in Indian market
+    - Analyze government policy impacts, regulatory changes affecting the industry
+    - Identify sector-wide opportunities and challenges
+
+    **VALUATION MODELING:**
+    - Perform relative valuation using P/E, P/B, EV/EBITDA multiples vs peers
+    - Assess if the company is undervalued, fairly valued, or overvalued
+    - Factor in growth prospects, risk profile, and market conditions
+
+    **STRATEGIC MARKET POSITION:**
+    - Evaluate company's market position strength vs competitors
+    - Assess competitive advantages and moats
+    - Analyze threats and opportunities in the market landscape
+
+    Use web search to gather current market data, competitor information, and sector trends to provide comprehensive context beyond just balance sheet analysis.
+  expected_output: |-
+    A comprehensive market and investment analysis report for {company_name} containing:
+
+    **COMPETITIVE LANDSCAPE ANALYSIS:**
+    - Detailed competitor comparison table with key financial metrics
+    - Market share and competitive positioning assessment
+    - Competitive advantages and disadvantages analysis
+
+    **SECTOR ANALYSIS:**
+    - Current sector performance and growth outlook
+    - Policy/regulatory impact assessment
+    - Industry-wide opportunities and challenges
+
+    **VALUATION ASSESSMENT:**
+    - Relative valuation analysis using multiple approaches
+    - Fair value estimation and current market valuation assessment
+    - Undervalued/Overvalued conclusion with supporting rationale
+
+    **STRATEGIC MARKET POSITION:**
+    - Market position strength score and analysis
+    - Key competitive moats and differentiators
+    - Strategic threats and opportunities mapping
+
+    **INVESTMENT PERSPECTIVE:**
+    - Forward-looking growth prospects assessment
+    - Risk-adjusted return potential evaluation
+    - Market-driven investment recommendation rationale
+  agent: investment_research_market_analyst
+  context:
+  - comprehensive_financial_data_extraction_and_analysis
+  - comprehensive_financial_health_change_analysis
+phase_2_udit_s_financial_health_analysis_delegation_review:
+  description: |-
+    **ORCHESTRATOR PHASE 2: FINANCIAL HEALTH ANALYSIS DELEGATION & QUALITY CONTROL**
+
+    Delegate the financial health assessment to the Financial Health Analyst and conduct thorough quality review of their analysis.
+
+    **DELEGATION RESPONSIBILITIES:**
+    - Communicate health analysis requirements to the Financial Health & Change Analyst
+    - Request comprehensive GREEN FLAGS and RED FLAGS identification
+    - Specify need for root cause analysis of all financial changes and trends
+    - Set expectations for depth of analysis and actionable insights
+
+    **QUALITY REVIEW PROCESS:**
+    - Review the health assessment for analytical depth and accuracy
+    - Verify that both positive and negative indicators have been thoroughly identified
+    - Check that root cause analysis explains all significant financial changes
+    - Assess whether trend implications are well-reasoned and actionable
+
+    **FEEDBACK & ITERATION:**
+    - If health analysis is superficial or missing key insights, request deeper investigation
+    - Ask for additional analysis on specific areas that seem incomplete
+    - Ensure all major financial changes have been properly explained with root causes
+    - Request clarification on any conclusions that seem unsupported by data
+
+    **DECISION CHECKPOINT:**
+    - Determine whether the health analysis provides sufficient insight for investment decisions
+    - Ensure both opportunities (green flags) and risks (red flags) are well-documented
+    - Verify that the analysis will support robust investment recommendations
+    - Only proceed when satisfied with the quality and comprehensiveness of health assessment
+  expected_output: |-
+    **PHASE 2 ORCHESTRATION REPORT:**
+
+    **HEALTH ANALYSIS DELEGATION SUMMARY:**
+    - Requirements communicated to Financial Health & Change Analyst
+    - Specific areas of focus requested for deep analysis
+    - Quality standards and analytical depth expectations set
+
+    **QUALITY REVIEW ASSESSMENT:**
+    - Evaluation of analytical rigor and depth in health assessment
+    - Verification of comprehensive GREEN FLAGS and RED FLAGS identification
+    - Assessment of root cause analysis quality for all financial changes
+    - Review of trend implications and forward-looking insights
+
+    **FEEDBACK & ITERATION LOG:**
+    - Documentation of any requests for deeper analysis or clarification
+    - Record of specific areas where additional investigation was requested
+    - Confirmation that all feedback has been incorporated satisfactorily
+
+    **PHASE 2 COMPLETION CERTIFICATION:**
+    - Strategic decision to proceed based on health analysis quality
+    - Confirmation that health assessment supports robust investment decisions
+    - Documentation of key health indicators (both positive and negative) for next phase
+    - Formal approval to advance to Market & Competitive Analysis phase
+
+    **FINANCIAL HEALTH SUMMARY FOR NEXT PHASE:**
+    - Key green flags and competitive advantages identified
+    - Critical red flags and risk factors to monitor
+    - Major trend implications and sustainability assessments
+  agent: udit
+  context:
+  - phase_1_udit_s_data_extraction_delegation_review
+  - comprehensive_financial_health_change_analysis
+phase_3_udit_s_market_analysis_delegation_review:
+  description: |-
+    **ORCHESTRATOR PHASE 3: MARKET & COMPETITIVE ANALYSIS DELEGATION & QUALITY CONTROL**
+
+    Delegate the market and competitive analysis to the Investment Research Analyst and conduct quality review of their market insights.
+
+    **DELEGATION RESPONSIBILITIES:**
+    - Communicate market analysis requirements to the Investment Research & Market Analyst
+    - Request comprehensive competitive benchmarking against industry peers
+    - Specify need for sector trend analysis and valuation modeling
+    - Set expectations for strategic market positioning assessment
+
+    **QUALITY REVIEW PROCESS:**
+    - Review competitive benchmarking for accuracy and relevance of peer comparison
+    - Verify that sector trends are current and impact company's prospects
+    - Assess valuation methodology and reasonableness of conclusions
+    - Check that strategic positioning analysis provides actionable investment insights
+
+    **FEEDBACK & ITERATION:**
+    - If competitive analysis lacks depth or uses inappropriate peers, request revision
+    - Ask for updated market data if trends seem outdated or incomplete
+    - Ensure valuation analysis considers multiple methodologies and market conditions
+    - Request deeper strategic analysis if positioning assessment seems superficial
+
+    **DECISION CHECKPOINT:**
+    - Determine whether market analysis provides sufficient context for investment decision
+    - Ensure competitive positioning and valuation conclusions are well-supported
+    - Verify that sector trends and market dynamics are properly integrated
+    - Only proceed when market insights adequately support strategic investment thesis
+  expected_output: |-
+    **PHASE 3 ORCHESTRATION REPORT:**
+
+    **MARKET ANALYSIS DELEGATION SUMMARY:**
+    - Requirements communicated to Investment Research & Market Analyst
+    - Specific competitive and sector analysis focus areas defined
+    - Quality standards for market insights and valuation work established
+
+    **QUALITY REVIEW ASSESSMENT:**
+    - Evaluation of competitive benchmarking accuracy and peer relevance
+    - Assessment of sector trend analysis currency and impact on company
+    - Review of valuation methodology rigor and conclusion reasonableness
+    - Analysis of strategic market positioning depth and actionability
+
+    **FEEDBACK & ITERATION LOG:**
+    - Documentation of any requests for updated market data or peer analysis
+    - Record of valuation methodology improvements or additions requested
+    - Confirmation that all market analysis feedback has been addressed
+
+    **PHASE 3 COMPLETION CERTIFICATION:**
+    - Strategic decision to proceed based on market analysis quality
+    - Confirmation that competitive and valuation insights support investment thesis
+    - Documentation of key market factors and positioning insights for final synthesis
+    - Formal approval to advance to Final Strategic Synthesis phase
+
+    **MARKET INSIGHTS SUMMARY FOR FINAL SYNTHESIS:**
+    - Competitive positioning strengths and weaknesses vs peers
+    - Key sector trends and their impact on investment prospects
+    - Valuation assessment and fair value conclusions
+    - Strategic market opportunities and threats identification
+  agent: udit
+  context:
+  - phase_2_udit_s_financial_health_analysis_delegation_review
+  - competitive_market_analysis_investment_valuation
+phase_4_udit_s_strategic_report_creation_delegation:
+  description: |-
+    **ORCHESTRATOR PHASE 4: STRATEGIC REPORT DELEGATION & CREATION**
+
+    Delegate the final strategic report creation to the Strategic Financial Report Writer based on all completed analysis phases.
+
+    **DELEGATION TO REPORT WRITER:**
+    - Provide the Report Writer with all completed analyses (data extraction, financial health, market analysis)
+    - Request comprehensive strategic investment report synthesis
+    - Ensure Report Writer has access to all necessary context and insights
+    - Guide Report Writer on specific areas requiring emphasis based on findings
+
+    **REPORT SPECIFICATION:**
+    - Request executive-grade strategic investment report with clear BULLISH/BEARISH/NEUTRAL recommendation
+    - Ensure integration of financial health, competitive positioning, and market dynamics
+    - Specify requirement for compelling investment thesis and supporting rationale
+    - Request comprehensive SWOT analysis and risk assessment
+    - Ensure actionable next steps and implementation guidance are included
+
+    **QUALITY EXPECTATIONS:**
+    - Set standards for analytical rigor and presentation quality
+    - Specify executive summary requirements for C-suite presentation
+    - Ensure report includes proper risk-adjusted return expectations
+    - Request clear timeline and monitoring metrics for reassessment
+  expected_output: |-
+    **DELEGATION REPORT TO STRATEGIC REPORT WRITER**
+
+    **ANALYSIS SYNTHESIS REQUEST:**
+    - Clear directive to Strategic Financial Report Writer to create final investment report
+    - Summary of all completed analysis phases and key findings to be integrated
+    - Specific requirements for report structure and content
+    - Quality standards and presentation expectations
+
+    **CONTEXT HANDOFF:**
+    - Complete transfer of all analytical insights from previous phases
+    - Key themes and patterns identified across data, health, and market analysis
+    - Critical decision factors and investment drivers highlighted
+    - Areas requiring special emphasis or deeper exploration noted
+
+    **REPORT SPECIFICATIONS:**
+    - Executive-grade strategic investment report requirement
+    - Clear BULLISH/BEARISH/NEUTRAL recommendation mandate
+    - Comprehensive SWOT analysis and risk assessment specification
+    - Actionable next steps and implementation guidance requirement
+    - C-suite presentation format and clarity standards
+  agent: udit
+  context:
+  - phase_1_udit_s_data_extraction_delegation_review
+  - phase_2_udit_s_financial_health_analysis_delegation_review
+  - phase_3_udit_s_market_analysis_delegation_review
+phase_5_strategic_investment_report_creation:
+  description: |-
+    Create a comprehensive, executive-grade strategic investment report for {company_name} by synthesizing all specialist analysis inputs from the previous phases.
+
+    **ANALYTICAL SYNTHESIS:**
+    - Integrate findings from financial data extraction, health assessment, and market analysis
+    - Identify key investment themes and connecting patterns across all analyses
+    - Weave complex data into a coherent, compelling investment narrative
+    - Transform analytical insights into strategic investment conclusions
+
+    **INVESTMENT THESIS DEVELOPMENT:**
+    - Develop clear, defendable investment thesis based on all gathered insights
+    - Structure logical argument flow from data → health → market → conclusion
+    - Address potential counterarguments and risk factors
+    - Establish confidence level based on analysis quality and market conditions
+
+    **STRATEGIC REPORT CREATION:**
+    - Create executive summary suitable for C-suite presentation
+    - Build comprehensive SWOT analysis integrating all analytical inputs
+    - Provide unambiguous BULLISH/BEARISH/NEUTRAL recommendation with rationale
+    - Include risk-adjusted return expectations and timeline
+    - Develop actionable next steps and implementation guidance
+
+    **PROFESSIONAL PRESENTATION:**
+    - Format report for maximum executive impact and clarity
+    - Use clear headings, bullet points, and structured presentation
+    - Include visual elements where appropriate (tables, key metrics)
+    - Ensure report meets investment committee standards
+
+    Present completed report to Financial Analysis Orchestrator for final review and approval.
+  expected_output: |-
+    **EXECUTIVE STRATEGIC INVESTMENT REPORT FOR {company_name}**
+
+    **EXECUTIVE SUMMARY:**
+    - One-page investment verdict with **BULLISH/BEARISH/NEUTRAL** recommendation
+    - Key investment thesis statement with confidence level (1-10)
+    - Primary rationale in 3-5 bullet points
+    - Target price range or expected return (if bullish/bearish)
+
+    **STRATEGIC INVESTMENT NARRATIVE:**
+    - Compelling story integrating financial health, competitive position, and market dynamics
+    - Clear logical flow from analysis to strategic conclusion
+    - Investment thesis with supporting pillars and evidence
+    - Risk-adjusted return expectation with timeframe
+
+    **COMPREHENSIVE SWOT ANALYSIS:**
+    - **STRENGTHS**: Financial advantages and competitive moats identified
+    - **WEAKNESSES**: Risk factors and competitive disadvantages
+    - **OPPORTUNITIES**: Growth catalysts and market trends favoring the company
+    - **THREATS**: Sector risks and competitive pressures
+
+    **INVESTMENT DECISION RATIONALE:**
+    - **Primary Recommendation**: BULLISH/BEARISH/NEUTRAL with conviction level
+    - **Supporting Arguments**: 3-5 key reasons with financial/market evidence
+    - **Risk Assessment**: Major downside risks and probability assessment
+    - **Upside Catalysts**: Potential positive drivers and timeline expectations
+
+    **CATALYSTS & RISK MATRIX:**
+    - **Upside Catalysts**: Specific events/trends that could drive outperformance
+    - **Downside Risks**: Key threats and their potential impact
+    - **Monitoring Metrics**: KPIs to track for ongoing assessment
+    - **Reassessment Timeline**: When to review the investment thesis
+
+    **ACTIONABLE NEXT STEPS:**
+    - Specific investment actions and position sizing recommendations
+    - Implementation timeline and entry/exit strategies
+    - Key trigger points for position adjustments
+    - Ongoing monitoring and review schedule
+  agent: strategic_financial_report_writer
+  context:
+  - phase_4_udit_s_strategic_report_creation_delegation
