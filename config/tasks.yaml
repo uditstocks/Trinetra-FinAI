@@ -1,66 +1,26 @@
 ---
+# Agent 1
 comprehensive_financial_data_extraction_and_analysis:
+
+
   description: |-
-    Extract and analyze comprehensive financial data from the provided balance sheet, P&L statement, and shareholding pattern documents for {company_name}. Perform detailed analysis including:
+     "For {company_name}, your sole focus is to use search tools to find and extract the following raw financial data points for the last 3-5 fiscal years.
+     Key Data to Extract: Revenue / Total Sales, Net Profit, Total Assets & Total Liabilities, Long-Term Debt, Cash Flow from Operations, Promoter Holding, FII & DII Holdings"
 
-    1. **Revenue & Profitability Analysis**: Extract revenue, sales, gross profit, operating profit, and net profit trends over past years and quarters. Calculate YoY and QoQ growth rates.
 
-    2. **Tax Impact Assessment**: Analyze tax expenses, effective tax rates, and impact on net profitability over time.
+  expected_output:  "A clean markdown table or JSON object with the extracted raw numerical data, clearly labeled for each fiscal year."
 
-    3. **Key Financial Ratios**: Calculate and track EPS, PE ratio, ROE, ROCE, debt-to-equity ratio, profit margins (gross, operating, net), current ratio, and quick ratio.
-
-    4. **Balance Sheet Analysis**: Extract and analyze total assets, current assets, non-current assets, total liabilities, current liabilities, long-term debt, and equity. Track changes over time.
-
-    5. **Cash Flow Analysis**: Extract cash flow from operations, investing, and financing activities. Assess sustainability and trends.
-
-    6. **Shareholding Pattern Analysis**: Extract promoter holding percentage, FII holdings, DII holdings, retail investor percentage, and track changes in promoter holdings over quarters.
-
-    7. **Operational Efficiency**: Analyze major cost components, expense ratios, and operational efficiency metrics.
-
-    8. **Comparative Analysis**: Perform detailed YoY and QoQ comparisons for all key metrics to identify growth/decline patterns.
-
-    Read all provided financial documents thoroughly and extract every relevant data point.
-  expected_output: "A comprehensive financial data analysis report containing:\n-
-    Complete revenue and profitability trends with growth rates\n- Tax impact analysis
-    and effective tax rate trends  \n- All key financial ratios with historical comparisons\n-
-    Detailed balance sheet analysis with asset-liability breakdowns\n- Cash flow analysis
-    and sustainability assessment\n- Complete shareholding pattern breakdown with
-    quarterly changes\n- Operational cost analysis and efficiency metrics\n- YoY and
-    QoQ comparative analysis for all metrics\n- All extracted raw financial data organized
-    in structured format\n\nFormat as detailed markdown report with tables for numerical
-    data and clear section headings."
   agent: comprehensive_financial_data_analyst
+
+# Agent 2
 comprehensive_financial_health_change_analysis:
-  description: "Conduct a comprehensive financial health assessment of {company_name}
-    identifying both positive and negative indicators. Analyze all financial changes
-    and their root causes:\n\n**GREEN FLAGS ANALYSIS:**\n- Identify improving metrics
-    (revenue growth, margin expansion, efficiency gains)\n- Spot emerging competitive
-    advantages and operational improvements\n- Highlight positive trends in cash generation,
-    debt reduction, market positioning\n\n**RED FLAGS ANALYSIS:**  \n- Detect deteriorating
-    metrics and potential risks\n- Identify financial stress indicators and sustainability
-    concerns\n- Spot operational inefficiencies and declining performance areas\n\n**CHANGE
-    ANALYSIS & ROOT CAUSE INVESTIGATION:**\n- If revenue is stable but profit declining:
-    investigate tax increases, cost inflation, operational inefficiencies\n- If revenue
-    increasing but margins declining: analyze pricing power, cost structure changes\n-
-    If cash flow declining despite profit growth: examine working capital, capex,
-    or accounting practices\n- Tax impact analysis: effective tax rate changes and
-    reasons\n- Cost structure analysis: identify which costs are rising/falling and
-    why\n- Operational efficiency trends: productivity metrics and resource utilization\n\n**TREND
-    IMPLICATIONS:**\n- Assess sustainability of current trends\n- Predict likely future
-    performance based on identified changes\n- Recommend areas requiring management
-    attention"
-  expected_output: "A comprehensive financial health report for {company_name} containing:\n\n**EXECUTIVE
-    SUMMARY**: Overall financial health score and key insights\n\n**GREEN FLAGS SECTION**:
-    \n- Positive indicators and improving metrics\n- Emerging competitive advantages
-    \n- Operational improvements and efficiency gains\n\n**RED FLAGS SECTION**:\n-
-    Risk indicators and deteriorating metrics\n- Potential financial stress signals\n-
-    Areas of concern requiring attention\n\n**CHANGE ANALYSIS**:\n- Detailed breakdown
-    of all significant financial changes\n- Root cause analysis for each major change
-    (revenue vs profit discrepancies, margin changes, etc.)\n- Tax impact assessment
-    and effective tax rate analysis\n- Cost structure evolution and operational efficiency
-    trends\n\n**PREDICTIVE INSIGHTS**:\n- Sustainability assessment of current trends
-    \ \n- Early warning indicators for future performance\n- Recommended monitoring
-    metrics and action items"
+  description: "First, using the raw financial data provided from the previous step for {company_name}, perform a detailed financial analysis by calculating the following:
+    1. Year-on-Year (YoY) growth rates for Revenue and Net Profit.
+    2. Key financial ratios: Debt-to-Equity Ratio, Return on Equity (ROE), and Net Profit Margin."
+  expected_output: "A comprehensive financial health report for {company_name} containing:
+    - A table with the calculated YoY growth rates and key ratios.
+    - A GREEN FLAGS section listing the top 3 positive indicators with brief explanations.
+    - A RED FLAGS section listing the top 3 risk indicators with brief explanations."
   agent: comprehensive_financial_health_change_analyst
   context:
   - comprehensive_financial_data_extraction_and_analysis
@@ -79,7 +39,6 @@ phase_1_udit_s_data_extraction_delegation_review:
     - Review the extracted financial data for accuracy, completeness, and consistency
     - Verify that all critical financial statements (income, balance sheet, cash flow) are captured
     - Check for any missing data points, inconsistencies, or red flags
-    - Assess data quality and reliability for subsequent analysis phases
 
     **FEEDBACK & ITERATION:**
     - If data extraction is incomplete or contains errors, delegate revision work back to the Financial Data Analyst
@@ -98,12 +57,6 @@ phase_1_udit_s_data_extraction_delegation_review:
     - Specification of financial documents and metrics requested
     - Quality standards and expectations set for the extraction process
 
-    **QUALITY REVIEW ASSESSMENT:**
-    - Comprehensive evaluation of extracted financial data quality
-    - Verification of completeness across all critical financial statements
-    - Identification of any data gaps, inconsistencies, or concerns
-    - Assessment of data reliability for subsequent analysis phases
-
     **FEEDBACK & ITERATION LOG:**
     - Documentation of any revision requests made to the Financial Data Analyst
     - Record of specific improvements or additional extractions requested
@@ -121,62 +74,55 @@ phase_1_udit_s_data_extraction_delegation_review:
   agent: udit
   context:
   - comprehensive_financial_data_extraction_and_analysis
+
+
+
+
 competitive_market_analysis_investment_valuation:
   description: |-
     Conduct comprehensive market and competitive analysis for {company_name} to determine strategic positioning and market valuation. Perform the following analysis:
 
     **COMPETITIVE BENCHMARKING:**
-    - Identify and analyze top 3-5 direct competitors in the same sector
+    - Identify and analyze top 3 direct competitors in the same sector
     - Compare key financial ratios (P/E, ROE, ROCE, debt-to-equity) with industry peers
-    - Assess competitive positioning and market share dynamics
 
     **SECTOR TREND ANALYSIS:**
-    - Research current sector performance and growth trends in Indian market
     - Analyze government policy impacts, regulatory changes affecting the industry
-    - Identify sector-wide opportunities and challenges
+
 
     **VALUATION MODELING:**
-    - Perform relative valuation using P/E, P/B, EV/EBITDA multiples vs peers
     - Assess if the company is undervalued, fairly valued, or overvalued
-    - Factor in growth prospects, risk profile, and market conditions
 
     **STRATEGIC MARKET POSITION:**
     - Evaluate company's market position strength vs competitors
-    - Assess competitive advantages and moats
-    - Analyze threats and opportunities in the market landscape
 
     Use web search to gather current market data, competitor information, and sector trends to provide comprehensive context beyond just balance sheet analysis.
   expected_output: |-
-    A comprehensive market and investment analysis report for {company_name} containing:
+    A comprehensive market and investment analysis short report for {company_name} containing:
 
     **COMPETITIVE LANDSCAPE ANALYSIS:**
     - Detailed competitor comparison table with key financial metrics
     - Market share and competitive positioning assessment
-    - Competitive advantages and disadvantages analysis
 
     **SECTOR ANALYSIS:**
     - Current sector performance and growth outlook
     - Policy/regulatory impact assessment
-    - Industry-wide opportunities and challenges
-
-    **VALUATION ASSESSMENT:**
-    - Relative valuation analysis using multiple approaches
-    - Fair value estimation and current market valuation assessment
-    - Undervalued/Overvalued conclusion with supporting rationale
 
     **STRATEGIC MARKET POSITION:**
     - Market position strength score and analysis
-    - Key competitive moats and differentiators
     - Strategic threats and opportunities mapping
 
     **INVESTMENT PERSPECTIVE:**
     - Forward-looking growth prospects assessment
     - Risk-adjusted return potential evaluation
-    - Market-driven investment recommendation rationale
+
+
   agent: investment_research_market_analyst
   context:
   - comprehensive_financial_data_extraction_and_analysis
   - comprehensive_financial_health_change_analysis
+
+
 phase_2_udit_s_financial_health_analysis_delegation_review:
   description: |-
     **ORCHESTRATOR PHASE 2: FINANCIAL HEALTH ANALYSIS DELEGATION & QUALITY CONTROL**
@@ -202,7 +148,7 @@ phase_2_udit_s_financial_health_analysis_delegation_review:
     - Request clarification on any conclusions that seem unsupported by data
 
     **DECISION CHECKPOINT:**
-    - Determine whether the health analysis provides sufficient insight for investment decisions
+    - Determine whether the health analysis provides sufficient insight for investment decisions in short but contains important detail
     - Ensure both opportunities (green flags) and risks (red flags) are well-documented
     - Verify that the analysis will support robust investment recommendations
     - Only proceed when satisfied with the quality and comprehensiveness of health assessment
@@ -215,15 +161,8 @@ phase_2_udit_s_financial_health_analysis_delegation_review:
     - Quality standards and analytical depth expectations set
 
     **QUALITY REVIEW ASSESSMENT:**
-    - Evaluation of analytical rigor and depth in health assessment
     - Verification of comprehensive GREEN FLAGS and RED FLAGS identification
     - Assessment of root cause analysis quality for all financial changes
-    - Review of trend implications and forward-looking insights
-
-    **FEEDBACK & ITERATION LOG:**
-    - Documentation of any requests for deeper analysis or clarification
-    - Record of specific areas where additional investigation was requested
-    - Confirmation that all feedback has been incorporated satisfactorily
 
     **PHASE 2 COMPLETION CERTIFICATION:**
     - Strategic decision to proceed based on health analysis quality
@@ -294,14 +233,16 @@ phase_3_udit_s_market_analysis_delegation_review:
     - Formal approval to advance to Final Strategic Synthesis phase
 
     **MARKET INSIGHTS SUMMARY FOR FINAL SYNTHESIS:**
-    - Competitive positioning strengths and weaknesses vs peers
-    - Key sector trends and their impact on investment prospects
     - Valuation assessment and fair value conclusions
     - Strategic market opportunities and threats identification
   agent: udit
   context:
   - phase_2_udit_s_financial_health_analysis_delegation_review
   - competitive_market_analysis_investment_valuation
+
+
+
+
 phase_4_udit_s_strategic_report_creation_delegation:
   description: |-
     **ORCHESTRATOR PHASE 4: STRATEGIC REPORT DELEGATION & CREATION**
@@ -330,7 +271,7 @@ phase_4_udit_s_strategic_report_creation_delegation:
     **DELEGATION REPORT TO STRATEGIC REPORT WRITER**
 
     **ANALYSIS SYNTHESIS REQUEST:**
-    - Clear directive to Strategic Financial Report Writer to create final investment report
+    - Clear directive to Strategic Financial Report Writer to create final investment report in short
     - Summary of all completed analysis phases and key findings to be integrated
     - Specific requirements for report structure and content
     - Quality standards and presentation expectations
@@ -339,23 +280,25 @@ phase_4_udit_s_strategic_report_creation_delegation:
     - Complete transfer of all analytical insights from previous phases
     - Key themes and patterns identified across data, health, and market analysis
     - Critical decision factors and investment drivers highlighted
-    - Areas requiring special emphasis or deeper exploration noted
+    - Areas requiring special emphasis or deeper exploration noted only headings
 
     **REPORT SPECIFICATIONS:**
     - Executive-grade strategic investment report requirement
-    - Clear BULLISH/BEARISH/NEUTRAL recommendation mandate
-    - Comprehensive SWOT analysis and risk assessment specification
+    - Clear BULLISH/BEARISH/NEUTRAL recommendation mandate in short no explanation needed
+    - Comprehensive short analysis and risk assessment specification
     - Actionable next steps and implementation guidance requirement
-    - C-suite presentation format and clarity standards
   agent: udit
   context:
   - phase_1_udit_s_data_extraction_delegation_review
   - phase_2_udit_s_financial_health_analysis_delegation_review
   - phase_3_udit_s_market_analysis_delegation_review
+
+
 phase_5_strategic_investment_report_creation:
   description: |-
     Create a comprehensive, executive-grade strategic investment report for {company_name} by synthesizing all specialist analysis inputs from the previous phases.
-
+    the report should be short and concise with important key deatils
+    
     **ANALYTICAL SYNTHESIS:**
     - Integrate findings from financial data extraction, health assessment, and market analysis
     - Identify key investment themes and connecting patterns across all analyses
@@ -386,34 +329,24 @@ phase_5_strategic_investment_report_creation:
     **EXECUTIVE STRATEGIC INVESTMENT REPORT FOR {company_name}**
 
     **EXECUTIVE SUMMARY:**
-    - One-page investment verdict with **BULLISH/BEARISH/NEUTRAL** recommendation
+    - **BULLISH/BEARISH/NEUTRAL** recommendation
     - Key investment thesis statement with confidence level (1-10)
-    - Primary rationale in 3-5 bullet points
+    - Primary rationale in 3 bullet points
     - Target price range or expected return (if bullish/bearish)
+    (this EXECUTIVE SUMMARY should be in straight forward way.)
 
-    **STRATEGIC INVESTMENT NARRATIVE:**
-    - Compelling story integrating financial health, competitive position, and market dynamics
-    - Clear logical flow from analysis to strategic conclusion
-    - Investment thesis with supporting pillars and evidence
-    - Risk-adjusted return expectation with timeframe
 
     **COMPREHENSIVE SWOT ANALYSIS:**
-    - **STRENGTHS**: Financial advantages and competitive moats identified
-    - **WEAKNESSES**: Risk factors and competitive disadvantages
-    - **OPPORTUNITIES**: Growth catalysts and market trends favoring the company
-    - **THREATS**: Sector risks and competitive pressures
+    - **STRENGTHS**: 3 points in short
+    - **WEAKNESSES**: 3 points in short
+    - **OPPORTUNITIES**: 3 points in short
+    - **THREATS**: Sector risks and competitive pressures 3 points in short
 
     **INVESTMENT DECISION RATIONALE:**
     - **Primary Recommendation**: BULLISH/BEARISH/NEUTRAL with conviction level
-    - **Supporting Arguments**: 3-5 key reasons with financial/market evidence
+    - **Supporting Arguments**: 3 key reasons with financial/market evidence
     - **Risk Assessment**: Major downside risks and probability assessment
     - **Upside Catalysts**: Potential positive drivers and timeline expectations
-
-    **CATALYSTS & RISK MATRIX:**
-    - **Upside Catalysts**: Specific events/trends that could drive outperformance
-    - **Downside Risks**: Key threats and their potential impact
-    - **Monitoring Metrics**: KPIs to track for ongoing assessment
-    - **Reassessment Timeline**: When to review the investment thesis
 
     **ACTIONABLE NEXT STEPS:**
     - Specific investment actions and position sizing recommendations
