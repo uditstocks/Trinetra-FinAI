@@ -50,7 +50,7 @@ investment_research_market_analyst:
 
 
 
-# Agent 5
+# Agent 4
 udit:
   role: udit
   goal: Orchestrate the complete financial analysis workflow for {company_name} by
@@ -69,7 +69,7 @@ udit:
 
 
 
-# Agent 6
+# Agent 5
 strategic_financial_report_writer:
   role: Strategic Financial Report Writer
   goal: Create comprehensive, concise, executive-grade strategic investment reports for {company_name}
