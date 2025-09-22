@@ -24,7 +24,6 @@ class LocalAiFinancialAnalysisSystemCrew:
             
             
             tools=[
-				FileReadTool(),
 				FileReadTool()
             ],
             reasoning=False,
@@ -71,7 +70,6 @@ class LocalAiFinancialAnalysisSystemCrew:
             
             
             tools=[
-				SerperDevTool()
             ],
             reasoning=False,
             max_reasoning_attempts=None,
@@ -94,7 +92,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             
             
             tools=[
-				SerperDevTool()
+				
             ],
             reasoning=False,
             max_reasoning_attempts=None,
@@ -117,7 +115,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             
             
             tools=[
-				SerperDevTool()
+				
             ],
             reasoning=False,
             max_reasoning_attempts=None,
@@ -142,7 +140,7 @@ class LocalAiFinancialAnalysisSystemCrew:
 
 
 
-
+# task module starts from here 
 
 
 
