@@ -15,7 +15,7 @@ from crewai_tools import (
 class LocalAiFinancialAnalysisSystemCrew:
     """LocalAiFinancialAnalysisSystem crew"""
 
-    
+    # here agents are defined 
     @agent
     def comprehensive_financial_data_analyst(self) -> Agent:
         
@@ -140,7 +140,7 @@ class LocalAiFinancialAnalysisSystemCrew:
 
 
 
-# task module starts from here 
+# task module starts from here (task assigned for agents)
 
 
 
@@ -201,7 +201,6 @@ class LocalAiFinancialAnalysisSystemCrew:
             markdown=False,
         )
     
-
     @crew
     def crew(self) -> Crew:
         """Creates the LocalAiFinancialAnalysisSystem crew"""
