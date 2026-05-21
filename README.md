@@ -1,7 +1,7 @@
-# Trinetra-FinAI 
-Multi-Agent AI for Intelligent Stock Market Research & Decision Support
+# 🔱 Trinetra-FinAI 
+Multi-Agent AI System for Intelligent Stock Market Research & Decision Support
 
-- Trinetra-FinAI is a multi-agent financial intelligence system built using CrewAI.
-- It simulates a collaborative team of AI agents that analyze stock market.
+📌 What is Trinetra-FinAI?
+Trinetra-FinAI is a multi-agent financial intelligence system built with CrewAI. It simulates a collaborative team of AI agents that work together to research, analyze, and generate a comprehensive investment report for any publicly listed company - all running 100% locally via Ollama.
 
-This is an AI research workflow.
+The system follows a sequential pipeline across 5 agents and 8 tasks - from raw data extraction to final strategic report writing.
