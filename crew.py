@@ -2,12 +2,11 @@ import os
 from crewai import LLM
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+from tools.yfinance_tool import YFinanceTool
 from crewai_tools import (
 	FileReadTool,
 	SerperDevTool
 )
-
-
 
 
 
@@ -69,7 +68,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             config=self.agents_config["investment_research_market_analyst"],
             
             
-            tools=[
+            tools=[YFinanceTool()
             ],
             reasoning=False,
             max_reasoning_attempts=None,
