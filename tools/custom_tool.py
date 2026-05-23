@@ -7,6 +7,8 @@ from pathlib import Path
 from typing import Type
 from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
+from crewai.tools import BaseTool
+import yfinance as yf
 
 
 # Example input schema for all tools
@@ -63,3 +65,21 @@ class WebScraperTool(BaseTool):
     def _run(self, query: str) -> str:
         # Implement web scraping logic here
         return f"Scraped web data for: {query}"
+
+
+# 6. YFinanceTool: for live stock data fetching
+class YFinanceTool(BaseTool):
+    name: str = "yfinance_stock_data"
+    description: str = "Fetches live stock data for a given ticker symbol"
+
+    def _run(self, ticker: str) -> str:
+        stock = yf.Ticker(ticker)
+        info = stock.info
+        return str({
+            "name": info.get("longName"),
+            "price": info.get("currentPrice"),
+            "pe_ratio": info.get("trailingPE"),
+            "market_cap": info.get("marketCap"),
+            "52w_high": info.get("fiftyTwoWeekHigh"),
+            "52w_low": info.get("fiftyTwoWeekLow"),
+        })
