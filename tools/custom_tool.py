@@ -9,6 +9,8 @@ from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from crewai.tools import BaseTool
 import yfinance as yf
+from crewai.tools import BaseTool
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 
 # Example input schema for all tools
@@ -83,3 +85,15 @@ class YFinanceTool(BaseTool):
             "52w_high": info.get("fiftyTwoWeekHigh"),
             "52w_low": info.get("fiftyTwoWeekLow"),
         })
+
+
+# 7. 
+class SentimentTool(BaseTool):
+    name: str = "sentiment_analyzer"
+    description: str = "Analyzes sentiment of financial news text. Input: news headline or paragraph."
+
+    def _run(self, text: str) -> str:
+        analyzer = SentimentIntensityAnalyzer()
+        scores = analyzer.polarity_scores(text)
+        label = "BULLISH" if scores["compound"] > 0.05 else "BEARISH" if scores["compound"] < -0.05 else "NEUTRAL"
+        return f"Sentiment: {label} | Scores: {scores}"
