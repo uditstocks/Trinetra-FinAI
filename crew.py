@@ -2,6 +2,7 @@ import os
 from crewai import LLM
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+from tools.sentiment_tool import SentimentTool
 from tools.yfinance_tool import YFinanceTool
 from crewai_tools import (
 	FileReadTool,
@@ -130,6 +131,16 @@ class LocalAiFinancialAnalysisSystemCrew:
         )
     
 
+@agent
+def market_sentiment_analyst(self) -> Agent:
+    return Agent(
+        config=self.agents_config["market_sentiment_analyst"],
+        tools=[SentimentTool(), SerperDevTool()],
+        inject_date=True,
+        allow_delegation=False,
+        max_iter=20,
+        llm=LLM(model='ollama/llama3.2:1b', temperature=0.5),
+    )
 
 
 
