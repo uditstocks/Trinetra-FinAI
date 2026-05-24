@@ -210,9 +210,15 @@ def market_sentiment_analyst(self) -> Agent:
             config=self.tasks_config["phase_5_strategic_investment_report_creation"],
             markdown=False,
         )
+@task
+def market_sentiment_analysis(self) -> Task:
+    return Task(
+        config=self.tasks_config["market_sentiment_analysis"],
+        markdown=False,
+    )
     
-    @crew
-    def crew(self) -> Crew:
+@crew
+def crew(self) -> Crew:
         """Creates the LocalAiFinancialAnalysisSystem crew"""
         return Crew(
             agents=self.agents,  # Automatically created by the @agent decorator
