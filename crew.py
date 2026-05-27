@@ -2,6 +2,7 @@ import os
 from crewai import LLM
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
+from tools.news_tool import StockNewsTool
 from tools.sentiment_tool import SentimentTool
 from tools.yfinance_tool import YFinanceTool
 from crewai_tools import (
@@ -143,6 +144,17 @@ def market_sentiment_analyst(self) -> Agent:
     )
 
 
+
+@agent
+def comprehensive_financial_health_change_analyst(self) -> Agent:
+    return Agent(
+        config=self.agents_config["comprehensive_financial_health_change_analyst"],
+        tools=[
+            SerperDevTool(),
+            StockNewsTool()       # ← add this
+        ],
+        ...
+    )
 
 
 
