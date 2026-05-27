@@ -97,3 +97,23 @@ class SentimentTool(BaseTool):
         scores = analyzer.polarity_scores(text)
         label = "BULLISH" if scores["compound"] > 0.05 else "BEARISH" if scores["compound"] < -0.05 else "NEUTRAL"
         return f"Sentiment: {label} | Scores: {scores}"
+
+# 8.
+import urllib.request
+import xml.etree.ElementTree as ET
+from crewai.tools import BaseTool
+
+class StockNewsTool(BaseTool):
+    name: str = "stock_news_fetcher"
+    description: str = "Fetches latest 5 news headlines for a stock ticker from Yahoo Finance RSS. Input: ticker symbol like RELIANCE.NS"
+
+    def _run(self, ticker: str) -> str:
+        url = f"https://feeds.finance.yahoo.com/rss/2.0/headline?s={ticker}&region=IN&lang=en-IN"
+        try:
+            with urllib.request.urlopen(url, timeout=10) as response:
+                tree = ET.parse(response)
+            items = tree.findall(".//item")
+            headlines = [item.find("title").text for item in items[:5]]
+            return "\n".join(headlines) if headlines else "No headlines found."
+        except Exception as e:
+            return f"Error fetching news: {str(e)}"
