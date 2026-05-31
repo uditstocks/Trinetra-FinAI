@@ -65,3 +65,17 @@ phase_5_strategic_investment_report_creation:
   agent: strategic_financial_report_writer
   context:
     - udit_review_and_assignment
+
+market_sentiment_analysis:
+  description: >
+    Fetch the latest news headlines for {company_name} using the
+    stock_news_fetcher tool. Run sentiment analysis on each headline
+    using the sentiment_analyzer tool. Aggregate results and determine
+    the overall market sentiment with a confidence score.
+  expected_output: >
+    A structured sentiment report containing:
+    - Overall verdict: BULLISH / BEARISH / NEUTRAL
+    - Confidence score (0 to 1)
+    - Top 3 headlines analyzed
+    - Brief reasoning for the verdict
+  agent: market_sentiment_analyst
