@@ -5,7 +5,6 @@ import csv
 import json
 from pathlib import Path
 from typing import Type
-from langchain.tools import BaseTool
 from pydantic import BaseModel, Field
 from crewai.tools import BaseTool
 import yfinance as yf
@@ -73,7 +72,7 @@ class WebScraperTool(BaseTool):
 class YFinanceTool(BaseTool):
     name: str = "yfinance_stock_data"
     description: str = "Fetches live stock data for a given ticker symbol"
-
+args_schema: Type[BaseModel] = ToolInput
     def _run(self, ticker: str) -> str:
         stock = yf.Ticker(ticker)
         info = stock.info
@@ -91,7 +90,7 @@ class YFinanceTool(BaseTool):
 class SentimentTool(BaseTool):
     name: str = "sentiment_analyzer"
     description: str = "Analyzes sentiment of financial news text. Input: news headline or paragraph."
-
+args_schema: Type[BaseModel] = ToolInput
     def _run(self, text: str) -> str:
         analyzer = SentimentIntensityAnalyzer()
         scores = analyzer.polarity_scores(text)
