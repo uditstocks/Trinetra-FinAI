@@ -1,9 +1,21 @@
 # .gitignore
 __pycache__/
 *.pyc
+
 .env
+.env.*
+
 .venv/
+venv/
+
 *.egg-info/
 dist/
+
 .crewai/
 outputs/
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
