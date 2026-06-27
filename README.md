@@ -205,17 +205,6 @@ suggest waiting for a clearer entry point.
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome. To propose a change:
-
-1. Fork the repo and create a feature branch (`git checkout -b feature/your-feature`)
-2. Commit your changes with clear messages
-3. Open a pull request describing the motivation and approach
-
-For larger changes, please open an issue first to discuss the direction.
-
----
 
 ## ⚠️ Disclaimer
 
