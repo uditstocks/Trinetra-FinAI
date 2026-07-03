@@ -8,7 +8,7 @@
 
 > **A multi-agent AI system for intelligent stock market research and decision support — running 100% locally.**
 
-Trinetra-FinAI orchestrates a collaborative team of specialized AI agents that research, analyze, and synthesize a comprehensive investment report for any publicly listed company. Inspired by the *Trinetra* (the third eye of clear sight), it fuses three lenses of analysis — **fundamental, technical, and sentiment** — into a single strategic view, with no data ever leaving your machine.
+Trinetra-FinAI orchestrates a collaborative team of specialized AI agents that research, analyze, and synthesize a comprehensive investment report for any publicly listed company. Inspired by the *Trinetra* (the third eye of clear sight), it fuses three lenses of analysis - **fundamental, technical, and sentiment** - into a single strategic view, with no data ever leaving your machine.
 
 ---
 
@@ -33,12 +33,12 @@ Trinetra-FinAI orchestrates a collaborative team of specialized AI agents that r
 
 ## 🎯 Why Trinetra-FinAI
 
-Most retail research is fragmented — fundamentals in one tab, charts in another, news in a third — and stitching them together is slow and inconsistent. Trinetra-FinAI automates that workflow with a coordinated crew of agents, each an expert in one domain, that hand off their findings to a final analyst for synthesis.
+Most retail research is fragmented - fundamentals in one tab, charts in another, news in a third - and stitching them together is slow and inconsistent. Trinetra-FinAI automates that workflow with a coordinated crew of agents, each an expert in one domain, that hand off their findings to a final analyst for synthesis.
 
-- **100% local & private** — runs entirely through [Ollama](https://ollama.ai/). No API keys, no per-token billing, no data sent to third parties.
-- **Multi-perspective by design** — fundamental, technical, and sentiment signals are weighed together rather than in isolation.
-- **Explainable** — every section of the final report traces back to the agent that produced it.
-- **Extensible** — agents, tools, and tasks are modular; add a new data source or analyst without touching the rest of the pipeline.
+- **100% local & private** - runs entirely through [Ollama](https://ollama.ai/). No API keys, no per-token billing, no data sent to third parties.
+- **Multi-perspective by design** - fundamental, technical, and sentiment signals are weighed together rather than in isolation.
+- **Explainable** - every section of the final report traces back to the agent that produced it.
+- **Extensible** - agents, tools, and tasks are modular; add a new data source or analyst without touching the rest of the pipeline.
 
 ---
 
@@ -157,7 +157,7 @@ python main.py --ticker AAPL
 
 The pipeline will spin up the agents in sequence and write the final report to the `outputs/` directory.
 
-> Replace `main.py` and the flag names with your actual entry point if they differ — adjust this section to match the repo.
+> Replace `main.py` and the flag names with your actual entry point if they differ - adjust this section to match the repo.
 
 ---
 
