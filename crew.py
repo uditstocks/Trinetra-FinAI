@@ -35,7 +35,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             max_rpm=None,
             max_execution_time=None,
             llm=LLM(
-                model='ollama/llama3.2:1b',
+                model='ollama/llama3.2:8b',
                 temperature=0.7,
             ),
         )
@@ -80,7 +80,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             max_rpm=None,
             max_execution_time=None,
             llm=LLM(
-                model='ollama/llama3.2:1b',
+                model='ollama/llama3.2:8b',
                 temperature=0.7,
             ),
         )
@@ -103,7 +103,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             max_rpm=None,
             max_execution_time=None,
             llm=LLM(
-                model='ollama/llama3.2:1b',
+                model='ollama/llama3.2:8b',
                 temperature=0.7,
             ),
         )
@@ -126,7 +126,7 @@ class LocalAiFinancialAnalysisSystemCrew:
             max_rpm=None,
             max_execution_time=None,
             llm=LLM(
-                model='ollama/llama3.2:1b',
+                model='ollama/llama3.2:8b',
                 temperature=0.7,
             ),
         )
@@ -140,7 +140,7 @@ def market_sentiment_analyst(self) -> Agent:
         inject_date=True,
         allow_delegation=False,
         max_iter=20,
-        llm=LLM(model='ollama/llama3.2:1b', temperature=0.5),
+        llm=LLM(model='ollama/llama3.2:8b', temperature=0.5),
     )
 
 
